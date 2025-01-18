@@ -1,16 +1,18 @@
-import ItemCount from './ItemCount'
+import ItemCount from './ItemCount';
+import { Col } from 'react-bootstrap';
 
 function ItemDetail({ detail }) {
+
     return (
-        <div className='div-detail'>
+        <Col className='div-detail text-center' md={6} lg={6}>
             <h2>{detail?.title}</h2>
-            <img src={detail?.thumbnail} alt={detail?.title} />
-            <p>Puntuación: {detail?.rating}</p>
-            <p>Stock: {detail?.stock}</p>
-            <p>Peso: {detail?.weight}00grs</p>
+            <img style={{ width: '300px' }} src={detail?.thumbnail} />
             <p>{detail?.description}</p>
-            <ItemCount />
-        </div>
+            <p><b>Medidas:</b> {detail?.measures}</p>
+            <p><b>Peso:</b> {detail?.weight}</p>
+            <p><b>Orígen:</b> {detail?.origin}</p>
+            <ItemCount detail={detail} />
+        </Col>
     )
 }
 

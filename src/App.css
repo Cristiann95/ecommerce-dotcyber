@@ -4,16 +4,27 @@ header {
   width: 100%;
 }
 
+p {
+  margin: 0;
+}
+
 /* NAVBAR */
 
 .titulo {
   font-size: 1.8rem;
   font-family: 'Rationale';
+  margin: 0;
 }
 
 .bg-body-tertiary {
-  background-color: rgb(81, 36, 36) !important;
+  background-color: rgb(65, 26, 26) !important;
   margin-bottom: 10px;
+}
+
+.me-auto>* {
+  font-family: 'Rationale';
+  font-size: 1.2em;
+  padding-left: 15px !important;
 }
 
 .menu {
@@ -21,9 +32,11 @@ header {
   left: 0px;
 }
 
-.div__cart {
+
+.link_cart {
   display: flex;
-  margin: 10px 20px 0px 0px;
+  text-decoration: none;
+  padding-left: 10px;
 }
 
 .badge {
@@ -54,34 +67,58 @@ header {
 .card-content {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 }
 
 
 .button-detail {
-  margin-top: auto;
+  margin-top: 8px;
 }
 
 /* ITEMDETAIL */
 
 .div-detail {
-  background-color: rgb(191, 176, 125);
-  border: 1px solid black;
-  border-radius: 10px;
-  width: 70%;
   padding: 10px;
   margin: auto;
   display: flex;
   flex-flow: column wrap;
   align-items: center;
   justify-content: center;
-  gap: 5px;
+  gap: 15px;
 }
 
 .div-count {
-  width: 20%;
+  height: 30px;
   display: flex;
-  flex-flow: column wrap;
+  align-items: center;
+  gap: 5px;
+}
+
+.btn__count {
+  border-radius: 50%;
+  width: 25px;
+  background-color: rgb(225, 225, 217);
+  border: none;
+  padding-bottom: 1px;
+}
+
+/* CART */
+
+.btn_trash {
+  background-color: transparent;
+  border: none;
+  margin-left: 3px;
+}
+
+.btn-delete-cart {
+  background-color: transparent;
+  border: none;
+  color: black;
+  font-family: 'Rationale';
+
+}
+
+.confirmButton_delete{
+  background-color: rgb(220, 30, 30);
 }

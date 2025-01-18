@@ -1,9 +1,9 @@
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
-import Col from 'react-bootstrap/Col';
+import {Button, Card, Col} from 'react-bootstrap';
 import { Link } from 'react-router'
 
 function Item({ card }) {
+    let price = card.price
+
     return (
         <Col key={card.id} className='div-col'>
             <Card className='card'>
@@ -11,10 +11,7 @@ function Item({ card }) {
                 <Card.Body className='card-content'>
                     <Card.Title>{card.title}</Card.Title>
                     <Card.Text>
-                        {card.description}
-                    </Card.Text>
-                    <Card.Text>
-                    Precio: usd {card.price}
+                      <strong>$ {price.toLocaleString('es-ES')}</strong>
                     </Card.Text>
                     <Button variant="primary" className='button-detail' as={Link} to={`/item/${card.id}`}>Ver detalle</Button>
                 </Card.Body>
