@@ -29,7 +29,7 @@ function CartItem({ item }) {
             <p className="m-0 w-75">{item.title} <br /> ${price.toLocaleString('es-ES')}</p>
             <p className="m-0 p-3 m-auto fw-semibold ">{item.quantity}</p>
             <button className="btn_trash" onClick={handleDeleteItem}>
-                <img style={{ width: '25px' }} src="./src/assets/trash-fill.svg" alt="Eliminar" />
+                <img style={{ width: '25px' }} src="/trash-fill.svg" alt="Eliminar" />
             </button>
         </ListGroup.Item>
     )

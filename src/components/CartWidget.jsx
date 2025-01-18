@@ -8,7 +8,7 @@ function CartWidget() {
     return (
         <div className="div__cart">
             <Link className='link_cart' to={'/cart'}>
-                <img className="cart__img" width="64" height="64" src='src/assets/shopping-cart.png' alt="shopping-cart" />
+                <img className="cart__img" width="64" height="64" src='/shopping-cart.png' alt="shopping-cart" />
                 <span className="badge">{getQuantities()}</span>
             </Link>
         </div>

@@ -9,7 +9,7 @@ function Cart() {
         return (
             <div className="w-50 mt-4 m-auto text-center">
                 <h4>Tu carrito está vacío </h4>
-                <img src="./src/public/carrito-de-compras.gif" alt="carrito de compras" />
+                <img src="/carrito-de-compras.gif" alt="carrito de compras" />
             </div>
         )
     }
