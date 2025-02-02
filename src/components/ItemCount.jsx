@@ -1,41 +1,33 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import CartContext from "../context/cartContext";
-import { Button } from 'react-bootstrap';
 
 
 function ItemCount({ detail }) {
 
-    const [count, setCount] = useState(0)
+    const { num, addToCountContext, quantity } = useContext(CartContext)
+    // const [count, setCount] = useState(1)
 
-    const { cart, setQuantity, addToCart } = useContext(CartContext)
-
-
-    const handleAddToCart = () => {
-        let find = cart.find(prod => prod.id == detail.id)
-
-        if (find) {
-            setQuantity(detail, count)
-        } else {
-            addToCart({ ...detail, quantity: count })
-        }
-        setCount(0)
-    }
+    // useEffect(() => {
+    //     setPrice((detail.price * detail.quantity).toLocaleString('es-ES'))
+    // }, [count])
 
     const suma = () => {
-        setCount(count + 1)
+        // setCount(count + 1)
+        addToCountContext(num + 1)
+        quantity(detail.id, detail.quantity + 1)
     }
 
     const resta = () => {
-        (count > 0) ? setCount(count - 1) : setCount(0)
+        // setCount(count - 1)
+        addToCountContext(num - 1)
+        quantity(detail.id, detail.quantity - 1)
     }
-
 
     return (
         <div className="div-count">
-            <button className="btn__count" onClick={resta} disabled={count < 1}>-</button>
-            <p className="mb-0">{count}</p>
+            <button className="btn__count" onClick={resta} disabled={detail.quantity < 2}>-</button>
+            <p className="mb-0">{detail.quantity}</p>
             <button className="btn__count" onClick={suma}>+</button>
-            <Button onClick={handleAddToCart}>Añadir al carrito</Button>
         </div>
     )
 }

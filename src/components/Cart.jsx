@@ -1,11 +1,12 @@
+import { useContext, useEffect } from "react";
 import CartItems from "./CartItems";
-import { useContext } from "react";
 import CartContext from "../context/cartContext";
 
 function Cart() {
-    const { cart, getTotal } = useContext(CartContext)
+    const { cart } = useContext(CartContext)
 
     if (cart.length === 0) {
+        localStorage.removeItem('productos')
         return (
             <div className="w-50 mt-4 m-auto text-center">
                 <h4>Tu carrito está vacío </h4>
@@ -15,7 +16,7 @@ function Cart() {
     }
 
     return (
-            <CartItems items={cart} total={getTotal} />
+        <CartItems items={cart} />
     )
 }
 

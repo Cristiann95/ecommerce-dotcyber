@@ -10,6 +10,7 @@ const MySwal = withReactContent(Swal)
 function CartItems({ items }) {
     const { getTotal, emptyCart } = useContext(CartContext)
 
+
     const deleteQuestion = () => {
         MySwal.fire({
             title: "Seguro que quieres eliminar todos los productos del carrito?",
@@ -28,7 +29,7 @@ function CartItems({ items }) {
 
 
     return (
-        <Container className="mt-4 col-lg-6 col-md-6 col-sm-12">
+        <Container className="mt-6 col-lg-6 col-md-8 col-sm-12">
             <Row>
                 <Col className="d-flex flex-column">
                     <ListGroup>
