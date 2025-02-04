@@ -29,7 +29,7 @@ function CartItems({ items }) {
 
 
     return (
-        <Container className="mt-6 col-lg-6 col-md-8 col-sm-12">
+        <Container className="mt-6 col-lg-6 col-md-8 col-sm-12" style={{minHeight:"100vh"}}>
             <Row>
                 <Col className="d-flex flex-column">
                     <ListGroup>

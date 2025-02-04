@@ -1,7 +1,7 @@
 function Footer() {
     return (
         <footer className="footer">
-            <span>© Copyright 2025 Cristian Bengardini</span>
+            <span> Copyright ©  2025 Cristian Bengardini</span>
         </footer>
     )
 }

@@ -3,6 +3,8 @@ import { getProducts, getProcuctsByCategory } from '../firebase/dataBase'
 import ItemList from "./ItemList";
 import { useParams } from "react-router";
 import Spinner from 'react-bootstrap/Spinner';
+import SliderImages from "./SliderImages";
+
 
 function ItemListContainer() {
   const [cards, setCards] = useState([])
@@ -13,13 +15,16 @@ function ItemListContainer() {
   }, [category])
 
   if (cards == '') {
-    return <div style={{ height: '400px' }} className="d-flex justify-content-center align-items-center">
-      <Spinner animation="border" variant="primary" role="status"></Spinner>
-    </div>
+    return (
+      <div style={{ height: '400px' }} className="d-flex justify-content-center align-items-center">
+        <Spinner animation="border" variant="primary" role="status"></Spinner>
+      </div>
+    )
   }
 
   return (
     <>
+      <SliderImages />
       <ItemList cards={cards} />
     </>
   )

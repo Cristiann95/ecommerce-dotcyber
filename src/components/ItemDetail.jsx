@@ -31,12 +31,12 @@ function ItemDetail({ detail }) {
                         <p className='quotas'><b>12</b> cuotas sin interés de ${(detail?.price / 12).toLocaleString('es-ES')}</p>
                         <p className='quotas'><b>6</b> cuotas sin interés de ${(detail?.price / 6).toLocaleString('es-ES')}</p>
                         <p className='quotas'><b>3</b> cuotas sin interés de ${(detail?.price / 3).toLocaleString('es-ES')}</p>
-                        <img style={{ width: '200px' }} src="../../public/tarjetas-credito-logos.png" alt="Tarjetas de crédito" />
+                        <img style={{ width: '200px' }} src="/tarjetas-credito-logos.png" alt="Tarjetas de crédito" />
                     </div><hr />
                     <div>
-                        <img src="../../public/icons8-camión-48 (1).png" alt="Camion-envío" />
+                        <img src="/icons8-camión-48 (1).png" alt="Camion-envío" />
                         <p className='p-sending'>Envíos gratis llevando más de un producto!</p> <br />
-                        <img src="../../public/icons8-tienda-48.png" alt="Sucursal-tienda" />
+                        <img src="/icons8-tienda-48.png" alt="Sucursal-tienda" />
                         <p className='p-sending'>Retirá <span style={{ color: 'green' }}>GRATIS</span> en sucursal!</p>
                     </div>
                     <Button className='btn-addToCart' onClick={handleAddToCart}>Añadir al carrito</Button>

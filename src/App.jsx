@@ -10,6 +10,7 @@ import { useContext } from 'react';
 import CartContext from './context/cartContext';
 import "toastify-js/src/toastify.css"
 
+
 function App() {
 
   const { cart } = useContext(CartContext)
@@ -25,7 +26,6 @@ function App() {
         <Route path="/checkout" element={(cart.length === 0) ? <Cart /> : <Checkout />} />
       </Routes>
       <Footer />
-
     </BrowserRouter>
   )
 }

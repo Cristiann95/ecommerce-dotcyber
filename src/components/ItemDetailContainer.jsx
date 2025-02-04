@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
-import {getSingleProduct} from '../firebase/dataBase'
+import { getSingleProduct } from '../firebase/dataBase'
 import ItemDetail from "./ItemDetail";
+
 
 function ItemDetailContainer() {
     const [detail, setDetail] = useState()
@@ -10,9 +11,9 @@ function ItemDetailContainer() {
     useEffect(() => {
         getSingleProduct(id, setDetail)
     }, [id])
-    
+
     return (
-        <ItemDetail detail={detail}/>
+        <ItemDetail detail={detail} />
     )
 }
 

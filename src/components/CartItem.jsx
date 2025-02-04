@@ -17,7 +17,7 @@ function CartItem({ item }) {
             position: "right",
             stopOnFocus: true,
             style: {
-                background: "linear-gradient(to right,rgb(109, 92, 7),rgb(176, 181, 82))",
+                background: "#bd7c42",
             },
         }).showToast();
     }
