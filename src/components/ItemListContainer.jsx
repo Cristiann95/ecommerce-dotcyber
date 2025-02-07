@@ -1,20 +1,32 @@
-import { useState, useEffect } from "react";
-import { getProducts, getProcuctsByCategory } from '../firebase/dataBase'
+import { useEffect, useContext } from "react";
+import { getProducts, getProcuctsByCategory, productsByName } from '../firebase/dataBase'
+import ProducsContext from '../context/productsContext'
 import ItemList from "./ItemList";
-import { useParams } from "react-router";
+import { useParams, useLocation } from "react-router";
 import Spinner from 'react-bootstrap/Spinner';
 import SliderImages from "./SliderImages";
 
 
 function ItemListContainer() {
-  const [cards, setCards] = useState([])
+  const { products, setProducts, value } = useContext(ProducsContext)
   const { category } = useParams()
+  const location = useLocation()
+
+
+  window.scrollTo(0, 0)
 
   useEffect(() => {
-    category ? getProcuctsByCategory(category, setCards) : getProducts(setCards)
-  }, [category])
+    if (category) {
+      getProcuctsByCategory(category, setProducts)
+    } else if (location.search) {
+      productsByName(setProducts, value)
+    } else {
+      getProducts(setProducts)
+    }
+  }, [category, location])
 
-  if (cards == '') {
+
+  if (products == '') {
     return (
       <div style={{ height: '400px' }} className="d-flex justify-content-center align-items-center">
         <Spinner animation="border" variant="primary" role="status"></Spinner>
@@ -25,7 +37,7 @@ function ItemListContainer() {
   return (
     <>
       <SliderImages />
-      <ItemList cards={cards} />
+      <ItemList cards={products} />
     </>
   )
 }

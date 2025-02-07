@@ -5,10 +5,10 @@ import CartItem from "./CartItem"
 import { Link } from "react-router"
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
-const MySwal = withReactContent(Swal)
 
 function CartItems({ items }) {
     const { getTotal, emptyCart } = useContext(CartContext)
+    const MySwal = withReactContent(Swal)
 
 
     const deleteQuestion = () => {

@@ -56,3 +56,18 @@ export async function createOrder(order) {
         MySwal.fire(`Hubo un error al enviar los datos: ${e}`);
     }
 }
+
+export async function productsByName(setCards, inputValue) {
+    const querySnapshot = await getDocs(collection(dataBase, "products"));
+    let products = []
+
+    let title = '';
+    querySnapshot.forEach((doc) => {
+        title = doc.data().title.toLowerCase();
+        if (title.includes(inputValue.toLowerCase())) {
+            products.push(doc.data())
+        }
+    })
+
+    setCards(products)
+}

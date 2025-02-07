@@ -9,6 +9,7 @@ import CheckoutForm from './CheckoutForm'
 function Checkout() {
     const [validated, setValidated] = useState(false);
     const { getTotal, cart, emptyCart } = useContext(CartContext)
+    window.scrollTo(0, 0)
     const navigate = useNavigate()
     const returnHome = () => {
         navigate('/')

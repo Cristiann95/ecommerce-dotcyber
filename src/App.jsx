@@ -16,11 +16,12 @@ function App() {
   const { cart } = useContext(CartContext)
 
   return (
-    <BrowserRouter>
+    <BrowserRouter >
       <NavBar />
       <Routes>
         <Route path="/" element={<ItemListContainer />} />
         <Route path="/category/:category" element={<ItemListContainer />} />
+        <Route path="/search" element={<ItemListContainer />} />
         <Route path="/item/:id" element={<ItemDetailContainer />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={(cart.length === 0) ? <Cart /> : <Checkout />} />

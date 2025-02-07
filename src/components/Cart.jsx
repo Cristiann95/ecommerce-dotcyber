@@ -1,28 +1,32 @@
 import { useContext, useEffect, useState } from "react";
 import CartItems from "./CartItems";
-import SliderImages from "./SliderImages";
 import CartContext from "../context/cartContext";
 import { getProducts } from "../firebase/dataBase";
+import SliderCart from "./SliderCart";
 
 function Cart() {
     const { cart } = useContext(CartContext)
-    const [ suggestions, setSuggestions ] = useState([])
+    const [suggestions, setSuggestions] = useState([])
 
-    
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
+
     if (cart.length === 0) {
         localStorage.removeItem('productos')
-        
-        useEffect(() => {
-           getProducts(setSuggestions)
-        }, [])
+
+        getProducts(setSuggestions)
 
         return (
             <>
-                <div className="w-50 mt-4 m-auto text-center" style={{ minHeight: "60vh" }}>
-                    <h4>Tu carrito está vacío </h4>
+                <div className="w-50 pt-4 m-auto text-center empty-cart">
+                    <h4>Tu carrito está vacío, agrega productos! </h4>
                     <img src="/carrito-de-compras.gif" alt="carrito de compras" />
                 </div>
-                <SliderImages suggestions={suggestions} />
+                <div className="cart-back">
+                    <h3 className="pt-4 px-4" >Te puede interesar</h3>
+                    <SliderCart suggestions={suggestions} />
+                </div>
             </>
         )
     }

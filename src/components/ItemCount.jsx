@@ -1,24 +1,17 @@
-import { useState, useContext, useEffect } from "react";
+import { useContext } from "react";
 import CartContext from "../context/cartContext";
 
 
 function ItemCount({ detail }) {
 
     const { num, addToCountContext, quantity } = useContext(CartContext)
-    // const [count, setCount] = useState(1)
-
-    // useEffect(() => {
-    //     setPrice((detail.price * detail.quantity).toLocaleString('es-ES'))
-    // }, [count])
 
     const suma = () => {
-        // setCount(count + 1)
         addToCountContext(num + 1)
         quantity(detail.id, detail.quantity + 1)
     }
 
     const resta = () => {
-        // setCount(count - 1)
         addToCountContext(num - 1)
         quantity(detail.id, detail.quantity - 1)
     }

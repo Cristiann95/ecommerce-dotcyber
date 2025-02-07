@@ -1,10 +1,13 @@
 import { useContext } from 'react'
 import CartContext from '../context/cartContext'
 import { Col, Button } from 'react-bootstrap'
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 function ItemDetail({ detail }) {
-
+    
     const { cart, addToCart } = useContext(CartContext)
+    const MySwal = withReactContent(Swal)
 
     let find = ''
 
@@ -16,19 +19,25 @@ function ItemDetail({ detail }) {
             return
         }
 
-        console.log('El producto ya se encuentra en el carrito')
+        MySwal.fire({
+            position: "top-end",
+            icon: "success",
+            title: 'El producto ya se encuentra en el carrito',
+            showConfirmButton: false,
+            timer: 1500
+          });
     }
 
     return (
         <Col className='div-detail'>
-            <section className='d-flex justify-content-around'>
-                <img className='p-4' style={{ width: '400px', height: '400px' }} src={detail?.thumbnail} />
+            <section className='section-detail d-flex justify-content-around'>
+                <img className='img-detail p-4' src={detail?.thumbnail} />
                 <div className='detail-prices'>
                     <h3>{detail?.title}</h3>
                     <h3>${detail?.price.toLocaleString('es-ES')}</h3>
                     <div>
                         <p className='title-quotas'><b>¡Tus opciones de pago!</b></p>
-                        <p className='quotas'><b>12</b> cuotas sin interés de ${(detail?.price / 12).toLocaleString('es-ES')}</p>
+                        <p className='quotas'><b>12</b> cuotas de ${((detail?.price + (detail?.price * 20 / 100)) / 12).toLocaleString('es-ES')}</p>
                         <p className='quotas'><b>6</b> cuotas sin interés de ${(detail?.price / 6).toLocaleString('es-ES')}</p>
                         <p className='quotas'><b>3</b> cuotas sin interés de ${(detail?.price / 3).toLocaleString('es-ES')}</p>
                         <img style={{ width: '200px' }} src="/tarjetas-credito-logos.png" alt="Tarjetas de crédito" />

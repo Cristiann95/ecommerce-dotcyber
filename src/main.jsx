@@ -6,11 +6,15 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import App from './App.jsx'
 import CartProvider from './context/CartProvider.jsx'
+import ProductsProvider from "./context/ProductsProvider.jsx";
+
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <CartProvider>
-    <App />
+      <ProductsProvider>
+        <App />
+      </ProductsProvider>
     </CartProvider>
   </StrictMode>
 )

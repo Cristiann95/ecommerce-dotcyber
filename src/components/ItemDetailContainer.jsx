@@ -9,6 +9,7 @@ function ItemDetailContainer() {
     const { id } = useParams()
 
     useEffect(() => {
+        window.scrollTo(0, 0)
         getSingleProduct(id, setDetail)
     }, [id])
 
