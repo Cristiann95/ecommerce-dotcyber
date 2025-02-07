@@ -6,6 +6,7 @@ Este es un proyecto de un e-commerce de productos tecnológicos desarrollado con
 
 -   **Catálogo de productos**: Los productos tecnológicos se muestran con su nombre, imagen y precio.
 -   **Filtrado de productos**: Los usuarios pueden filtrar los productos por categoría.
+-   **Filtrado por búsqueda**: Los usuarios pueden filtrar los productos mediante la barra de búsqueda.
 -   **Detalles del producto**: Al hacer clic en un producto, se muestra una vista con su descripción y con detalles más completos.
 -   **Carrito de compras**: Los productos pueden ser agregados al carrito y modificados.
 -   **Simulación de compra**: Los usuarios pueden ingresar sus datos para simular una compra.
