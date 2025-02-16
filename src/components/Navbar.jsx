@@ -38,7 +38,7 @@ function NavBar() {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="w-100 justify-content-end">
                         <Form>
-                            <Row className='me-3'>
+                            <Row className='me-4'>
                                 <Col className='p-0' xs="auto">
                                     <Form.Control
                                         id='input-search'
